@@ -6,6 +6,8 @@ A repository where you can find VSCode Language Extensions for the languages tha
 
 This repository has been thought to be as a container for VSCode Language Extensions for the languages that are currently available in Sibilla. 
 
+These extensions can be used ONLY in VSCode. They are not available for other IDEs or editors yet
+
 For each one, a Syntax Highlighter and a set of Snippets have been implemented to speed up the specification of a model.
 
 The available extensions in the folder are the following:
