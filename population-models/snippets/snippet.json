@@ -1,0 +1,80 @@
+{
+    "param": {
+        "prefix": "param",
+        "body": [
+            "param ${1:var} = ${2:val} ;"
+        ],
+        "description": "A base parameter declaration"
+    },
+
+    "const": {
+        "prefix": "const",
+        "body": [
+            "const ${1:var} = ${2:val} ;"
+        ],
+        "description": "A base constant declaration"
+    },
+
+    "species": {
+        "prefix": "species",
+        "body": [
+            "species ${1:speciesName} ;"
+        ],
+        "description": "A base species declaration"
+    },
+
+    "rule": {
+        "prefix": "rule",
+        "body": [
+            "rule ${1:ruleName} {",
+            "${2:initialSpecies} -[ ${3:probRule} ]-> ${4:finalSpecies}",
+            "}"
+        ],
+        "description": "A base rule declaration"
+    },
+
+    "system": {
+        "prefix": "system",
+        "body": [
+            "system ${1:initName} = $2  ; "
+        ]
+    },
+
+    "initValue": {
+        "prefix": "initValue",
+        "body": [
+            "${1:speciesName} < ${2:initValue} > |"
+        ]
+    },
+
+    "initValueTerminal": {
+        "prefix": "initValueTerminal",
+        "body": [
+            "${1:speciesName} < ${2:initValue} > ;"
+        ]
+    },
+
+    "pmTemplate": {
+        "description": "A base template describing the fundamental component of a Population Model",
+        "prefix": "pmTemplate",
+        "body": [
+            "/* Parameters declaration */",
+            "param ${1:var} = ${2:val} ;",
+            "\n",
+            "/* Constants declaration */",
+            "const ${3:var} = ${4:val} ;",
+            "\n",
+            "/* Speecies declaration */",
+            "species ${5:speciesName} ;",
+            "\n",
+            "/* Rules declaration */",
+            "rule ${6:ruleName} {",
+            "${7:initialSpecies} -[ ${8:probRule} ]-> ${9:finalSpecies}",
+            "}",
+            "\n",
+            "/* Initialisation Systems declaration */",
+            "system ${10:initName} = $11  ; "
+        ]
+    }
+
+}

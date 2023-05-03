@@ -1,0 +1,32 @@
+{
+  "name": "population-models",
+  "displayName": "Population Models",
+  "description": "Syntax Highlight for populations models",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.77.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Snippets"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "pm",
+      "aliases": ["Population Models", "pm"],
+      "extensions": [".pm"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "pm",
+      "scopeName": "source.pm",
+      "path": "./syntaxes/pm.tmLanguage.json"
+    }],
+    "snippets": [
+      {
+        "language": "pm",
+        "path": "./snippets/snippet.json"
+      }
+    ]
+  }
+}

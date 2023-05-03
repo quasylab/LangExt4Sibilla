@@ -1,0 +1,54 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Population Models",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#comments"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.pm",
+				"match": "\\b(param|const|species|rule|system|predicate)\\b"
+			}]
+		},
+		"strings": {
+			"name": "string.quoted.double.pm",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.pm",
+					"match": "\\\\."
+				}
+			]
+		},
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment.block.empty.pm",
+					"match": "/\\*\\*/"
+				},
+				{
+					"name": "comment.block.pm",
+					"begin": "/\\*",
+					"captures": {
+						"0": {
+							"name": "punctuation.definition.comment.json.comments"
+						}
+					},
+					"end": "\\*/"
+				}
+			]
+		}
+		
+	},
+	"scopeName": "source.pm"
+}
