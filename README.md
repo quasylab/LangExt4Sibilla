@@ -13,6 +13,7 @@ For each one, a Syntax Highlighter and a set of Snippets have been implemented t
 The available extensions in the folder are the following:
 
  - [Population Models](https://github.com/quasylab/LangExt4Sibilla/tree/main/population-models)
+ - [YODA](https://github.com/quasylab/LangExt4Sibilla/tree/main/yoda)
  
  ## How to use an Extension
  
