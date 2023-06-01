@@ -1,0 +1,91 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "yoda",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#types"
+		},
+		{
+			"include": "#agent-keywords"
+		},
+		{
+			"include": "#system-keywords"
+		}
+	],
+	
+	"repository": {
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.params.yoda",
+					"match": "\\b(group|const|param|configuration)\\b"
+				}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.yoda",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.yoda",
+					"match": "\\\\."
+				}
+			]
+		},
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment.block.empty.yoda",
+					"match": "/\\*\\*/"
+				},
+				{
+					"name": "comment.block.yoda",
+					"begin": "/\\*",
+					"captures": {
+						"0": {
+							"name": "punctuation.definition.comment.json.comments"
+						}
+					},
+					"end": "\\*/"
+				},
+				{
+					"match": "//TODO",
+					"name": "keyword.todo.yoda"				
+				}
+			]
+		},
+		"types": {
+			"patterns": [{ 
+				"name": "entity.name.type.yoda",
+				"match": "\\b(int|bool|real|array|String|char|type)\\b"
+			}]
+		},
+		"agent-keywords": {
+			"patterns": [
+				{
+				"name": "keyword.agent.yoda",
+				"match": "\\b(agent|state|knowledge|information|observations|actions|behaviour)\\b"
+				}
+			]
+		},
+		"system-keywords": {
+			"patterns": [
+				{
+					"name": "keyword.system.yoda",
+					"match": "\\b(system|scene|sensing|evolution)\\b"
+				}
+			]
+		}
+	},
+	"scopeName": "source.yoda"
+}

@@ -64,7 +64,7 @@
             "/* Constants declaration */",
             "const ${3:var} = ${4:val} ;",
             "\n",
-            "/* Speecies declaration */",
+            "/* Species declaration */",
             "species ${5:speciesName} ;",
             "\n",
             "/* Rules declaration */",

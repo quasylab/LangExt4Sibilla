@@ -45,6 +45,10 @@
 						}
 					},
 					"end": "\\*/"
+				},
+				{
+					"match": "//TODO",
+					"name": "keyword.todo.yoda"
 				}
 			]
 		}

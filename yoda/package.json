@@ -1,0 +1,32 @@
+{
+  "name": "yoda",
+  "displayName": "YODA",
+  "description": "Syntax Highlighter for YODA Models",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.78.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Snippets"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "yoda",
+      "aliases": ["yoda", "yoda"],
+      "extensions": [".yoda"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "yoda",
+      "scopeName": "source.yoda",
+      "path": "./syntaxes/yoda.tmLanguage.json"
+    }],
+    "snippets": [
+      {
+        "language": "yoda",
+        "path": "./snippets/snippet.json"
+      }
+    ]
+  }
+}

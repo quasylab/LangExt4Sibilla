@@ -1,10 +1,6 @@
-# Language Extension for Population Models
+# yoda README
 
-A Population Model consists of a set of agents belonging to a given set of species. A system evolves by means of reaction rules describing how the number of elements of the different species changes. Rules are applied with a rate, which is a positive real value, that depends on the number of agents in the different species. 
-
-The stochastic process associated with a PM specification is a Continuous Time Markov Chain. Those models have been widely used to model different kinds of systems in different application domains ranging from ecology and epidemics to cyber-physical systems.
-
-This language extension can be used to ease the specification of Population Models.
+This is the README for your extension "yoda". After writing up a brief description, we recommend including the following sections.
 
 ## Features
 
@@ -33,10 +29,37 @@ This extension contributes the following settings:
 
 ## Known Issues
 
-None
+Calling out known issues can help limit users opening duplicate issues against your extension.
 
 ## Release Notes
 
 Users appreciate release notes as you update your extension.
 
+### 1.0.0
 
+Initial release of ...
+
+### 1.0.1
+
+Fixed issue #.
+
+### 1.1.0
+
+Added features X, Y, and Z.
+
+---
+
+## Working with Markdown
+
+You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
+
+* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
+* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
+* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
+
+## For more information
+
+* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
+* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
+
+**Enjoy!**

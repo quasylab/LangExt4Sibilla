@@ -1,0 +1,208 @@
+{
+    "param":{
+        "prefix": "param",
+        "body": [
+            "param ${1:paramVariable} = ${2:paramValue} ;"
+        ],
+        "description": "A parameter declaration"
+    },
+
+    "const": {
+        "prefix": "const",
+        "body": [
+            "const ${1:constVariable} = ${2:constValue} ;" 
+        ],
+        "description": "A constant declaration"
+    },
+
+    "group": {
+        "prefix": "group",
+        "body": [
+            "group ${1:groupName} {",
+            "/* Add here the agents */",
+            "}"
+        ],
+        "description": "A group of entities declaration"
+    },
+
+    "type": {
+        "prefix": "type",
+        "body": [
+            "type ${1:typeName} {",
+            " /* Add here the type body*/ ",
+            "}"
+        ],
+        "description": "A customised type declaration"
+    },
+
+    "agentTemplate": {
+        "prefix": "agentTemplate",
+        "body": [
+            "agent ${1:agentName} {",
+            "state {",
+            "knowledge { /* Add here knowledge fields */ }",
+            "information { /* Add here information fields */ }",
+            "}",
+            "observations { /* Add here observation fields */ }",
+            "actions { /* Add here action statements */ }",
+            "behaviour { /* Add here behaviour rules */ }",
+            "}"
+        ],
+        "description": "A agent declaration template"
+    },
+
+    "fieldDeclaration":{
+        "prefix": "fieldDeclaration",
+        "body": [
+            "${1:type} ${2:fieldName}"
+        ],
+        "description": "A declaration for new fields"
+    },
+
+    "fieldDeclarationCont": {
+        "prefix": "fieldDeclarationCont",
+        "body": [
+            "; ${1:type} ${2:fieldName}"
+        ],
+        "description": "A declaration for adding new consecutive fields"
+    },
+
+    "actionDeclaration": {
+        "prefix": "actionDeclaration",
+        "body": [
+            "${1:actionName} { /* Add here the field updates */ }"
+        ],
+        "description": "A custom action declaration"
+    },
+
+    "fieldUpdate": {
+        "prefix": "fieldUpdate",
+        "body": [
+            "${1:fieldName} <- ${2:fieldNewValue}"
+        ],
+        "description": "A declaration for updating existing fields"
+    },
+
+    "fieldUpdateCont": {
+        "prefix": "fieldUpdateCont",
+        "body": [
+            "; ${1:fieldName} <- ${2:fieldNewValue}"
+        ],
+        "description": "A declaration for updating consecutive existing fields"
+    },
+
+    "behaviourRule": {
+        "prefix": "behaviourRule",
+        "body": [
+            "[ ${1:booleanExpr} ] -> { /* Add here the behaviour weighted rules */ } |"
+        ],
+        "description": "A behaviour rule declaration"
+    },
+    
+    "behaviourDefaultRule": {
+        "prefix": "behaviourDefaultRule",
+        "body": [
+            "default { /* Add here the behaviour weighted rules */ }"
+        ],
+        "description": "A behaviour default rule declaration"
+    },
+
+    "weightedRule": {
+        "prefix": "weightedRule",
+        "body": [
+            "${1:actionName} : ${2:weight}"
+        ],
+        "description": "A weight rule"
+    },
+
+    "systemTemplate": {
+        "prefix": "systemTemplate",
+        "body": [
+            "system ${1:systemName} {",
+            "scene { /* Add here the scene fields */ }",
+            "sensing { /* Add here the sensing rules (only for agents) */ }",
+            "evolution { /* Add here the environment evolution rules (both agents and scene entities */ }",
+            "}"
+        ],
+        "description": "A system declaration template"
+    },
+
+    "assignmentTemp": {
+        "prefix": "assignmentTemp",
+        "body": [
+            "let ${1:tempName} { /* Add here selection blocks*/ }"
+        ],
+        "description": "A temporary variable assignment"
+    },
+
+    "selectionBlock": {
+        "prefix": "selectionBlock",
+        "body": [
+            "select ${1:selectionName} in ${2:groupName} that ${3:expr}"
+        ],
+        "description": "A selection block for entities"
+    },
+
+    "systemUpdate": {
+        "prefix": "systemUpdate",
+        "body": [
+            "${1:entityName} { /* Add here entity updates */ }"
+        ],
+        "description": "A declaration for updating field related to the system (sensing and environment evolution)"
+    },
+
+    "configurationTemplate": {
+        "prefix": "configurationTemplate",
+        "body": [
+            "configuration ${1:configurationName} {",
+            "/* Add here the collections declaration */",
+            "${2:systemName} [ /* Add here the initialisation for scene fields */ ] {/* Add here the collective declaration */}",
+            "}"
+        ],
+        "description": "A configuration declaration template"
+    },
+
+    "collectionDeclaration": {
+        "prefix": "collectionDeclaration",
+        "body": [
+            "let ${1:collectionName} = ${2:functionType}",
+            "/* Add here additional collection declaration */",
+            "in"
+        ],
+        "description": "A declaration for temporary collection declaration"
+    },
+
+    "collectionDeclarationCont": {
+        "prefix": "collectionDeclarationCont",
+        "body": [
+            "and ${1:collectionName} = ${2:functionType}"
+        ],
+        "description": "A declaration for consecutive temporary collection declaration"
+    },
+
+    "generateFunction": {
+        "prefix": "generateFunction",
+        "body": [
+            "generate ( ${1:size} , ${2:randomExpr} )"
+        ],
+        "description": "A function to generate entities"
+    },
+
+    "distinctFunction": {
+        "prefix": "distinctFunction",
+        "body": [
+            "distinct ( ${1:size} , ${2:randomExpr} )"
+        ],
+        "description": "A function to generate distinct entities"
+    },
+
+    "distinctFromFunction": {
+        "prefix": "distinctFromFunction",
+        "body": [
+            "distinctFrom ( ${1:size} , ${2:randomExpr} , ${3:otherName} )"
+        ]
+    }
+
+
+
+}
