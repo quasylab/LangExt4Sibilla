@@ -35,36 +35,45 @@
         "description": "A customised type declaration"
     },
 
+    "element": {
+        "prefix": "element",
+        "body": [
+            "element ${1:elementName} = ",
+            "/* Add element attributes here */",
+            "end"
+        ],
+        "description": "A template for scene elements"
+
+    },
+
+
+
+
     "agentTemplate": {
         "prefix": "agentTemplate",
         "body": [
-            "agent ${1:agentName} {",
-            "state {",
-            "knowledge { /* Add here knowledge fields */ }",
-            "information { /* Add here information fields */ }",
-            "}",
-            "observations { /* Add here observation fields */ }",
-            "actions { /* Add here action statements */ }",
-            "behaviour { /* Add here behaviour rules */ }",
-            "}"
+            "agent ${1:agentName} =",
+            "state :",
+            "/* Add state attributes here */",
+            "features :",
+            "/* Add feature attributes here */",
+            "observations :",
+            "/* Add observation attributes here */",
+            "actions :",
+            "/* Add action statements here */",
+            "behaviour :",
+            "/* Add behaviour rules here */",
+            "end"
         ],
         "description": "A agent declaration template"
     },
 
-    "fieldDeclaration":{
-        "prefix": "fieldDeclaration",
+    "nameDeclaration":{
+        "prefix": "nameDeclaration",
         "body": [
-            "${1:type} ${2:fieldName}"
+            "${1:type} ${2:name} = ${3:expr} ;"
         ],
-        "description": "A declaration for new fields"
-    },
-
-    "fieldDeclarationCont": {
-        "prefix": "fieldDeclarationCont",
-        "body": [
-            "; ${1:type} ${2:fieldName}"
-        ],
-        "description": "A declaration for adding new consecutive fields"
+        "description": "A base declaration for attributes name"
     },
 
     "actionDeclaration": {
@@ -75,34 +84,34 @@
         "description": "A custom action declaration"
     },
 
-    "fieldUpdate": {
-        "prefix": "fieldUpdate",
+    "attributeUpdate": {
+        "prefix": "attributeUpdate",
         "body": [
-            "${1:fieldName} <- ${2:fieldNewValue}"
+            "${1:fieldName} <- ${2:fieldNewValue} ;"
         ],
-        "description": "A declaration for updating existing fields"
+        "description": "A declaration for updating existing attributes"
     },
 
-    "fieldUpdateCont": {
-        "prefix": "fieldUpdateCont",
+    "whenBehaviourRule": {
+        "prefix": "whenBehaviourRule",
         "body": [
-            "; ${1:fieldName} <- ${2:fieldNewValue}"
-        ],
-        "description": "A declaration for updating consecutive existing fields"
-    },
-
-    "behaviourRule": {
-        "prefix": "behaviourRule",
-        "body": [
-            "[ ${1:booleanExpr} ] -> { /* Add here the behaviour weighted rules */ } |"
+            "when [ ${1:booleanExpr} ] -> [ /* Add here the behaviour weighted rules */ ]"
         ],
         "description": "A behaviour rule declaration"
     },
     
-    "behaviourDefaultRule": {
+    "orwhenBehaviourRule": {
+        "prefix": "orwhenBehaviourRule",
+        "body": [
+            "orwhen [ ${1:booleanExpr} ] -> [ /* Add here the behaviour weighted rules */ ]"
+        ],
+        "description": "A behaviour rule declaration to continue"
+    },
+
+    "otherwiseBehaviourRule": {
         "prefix": "behaviourDefaultRule",
         "body": [
-            "default { /* Add here the behaviour weighted rules */ }"
+            "otherwise [ /* Add here the behaviour weighted rules */ ]"
         ],
         "description": "A behaviour default rule declaration"
     },
@@ -112,97 +121,52 @@
         "body": [
             "${1:actionName} : ${2:weight}"
         ],
-        "description": "A weight rule"
+        "description": "A weighted rule"
     },
+
+
+
 
     "systemTemplate": {
         "prefix": "systemTemplate",
         "body": [
-            "system ${1:systemName} {",
-            "scene { /* Add here the scene fields */ }",
-            "sensing { /* Add here the sensing rules (only for agents) */ }",
-            "evolution { /* Add here the environment evolution rules (both agents and scene entities */ }",
-            "}"
+            "environment :",
+            "sensing : /* Add here the sensing rules */ ",
+            "dynamic : /* Add here the environment evolution rules */ ",
+            "end"
         ],
         "description": "A system declaration template"
     },
 
-    "assignmentTemp": {
-        "prefix": "assignmentTemp",
-        "body": [
-            "let ${1:tempName} { /* Add here selection blocks*/ }"
-        ],
-        "description": "A temporary variable assignment"
-    },
 
-    "selectionBlock": {
-        "prefix": "selectionBlock",
-        "body": [
-            "select ${1:selectionName} in ${2:groupName} that ${3:expr}"
-        ],
-        "description": "A selection block for entities"
-    },
 
-    "systemUpdate": {
-        "prefix": "systemUpdate",
-        "body": [
-            "${1:entityName} { /* Add here entity updates */ }"
-        ],
-        "description": "A declaration for updating field related to the system (sensing and environment evolution)"
-    },
 
     "configurationTemplate": {
         "prefix": "configurationTemplate",
         "body": [
-            "configuration ${1:configurationName} {",
-            "/* Add here the collections declaration */",
-            "${2:systemName} [ /* Add here the initialisation for scene fields */ ] {/* Add here the collective declaration */}",
-            "}"
+            "configuration ${1:configurationName} :",
+            "/* Add element initiliasation here */",
+            "/* Add agent initiliasation here */",
+            "end"
         ],
         "description": "A configuration declaration template"
     },
 
-    "collectionDeclaration": {
-        "prefix": "collectionDeclaration",
+    "individualConfiguration":{
+        "prefix": "individualConfiguration",
         "body": [
-            "let ${1:collectionName} = ${2:functionType}",
-            "/* Add here additional collection declaration */",
-            "in"
+            "${1:entityName} [/* Add attributes assignments here*/]"
         ],
-        "description": "A declaration for temporary collection declaration"
+        "description": "An individual configuration for an entity"
     },
 
-    "collectionDeclarationCont": {
-        "prefix": "collectionDeclarationCont",
+    "forLoopConfiguration": {
+        "prefix": "forLoopConfiguration",
         "body": [
-            "and ${1:collectionName} = ${2:functionType}"
+            "for ${1:nameVar} ${2:setOfValues} do",
+            "/* Add individual configuration here */",
+            "endfor"
         ],
-        "description": "A declaration for consecutive temporary collection declaration"
-    },
-
-    "generateFunction": {
-        "prefix": "generateFunction",
-        "body": [
-            "generate ( ${1:size} , ${2:randomExpr} )"
-        ],
-        "description": "A function to generate entities"
-    },
-
-    "distinctFunction": {
-        "prefix": "distinctFunction",
-        "body": [
-            "distinct ( ${1:size} , ${2:randomExpr} )"
-        ],
-        "description": "A function to generate distinct entities"
-    },
-
-    "distinctFromFunction": {
-        "prefix": "distinctFromFunction",
-        "body": [
-            "distinctFrom ( ${1:size} , ${2:randomExpr} , ${3:otherName} )"
-        ]
+        "description": "A for-loop to configurate entities"
     }
-
-
-
 }

@@ -27,7 +27,7 @@
 			"patterns": [
 				{
 					"name": "keyword.params.yoda",
-					"match": "\\b(group|const|param|configuration)\\b"
+					"match": "\\b(group|const|param|configuration|measure|element|end)\\b"
 				}
 			]
 		},
@@ -82,7 +82,7 @@
 			"patterns": [
 				{
 					"name": "keyword.system.yoda",
-					"match": "\\b(system|scene|sensing|evolution)\\b"
+					"match": "\\b(system|dynamic|sensing)\\b"
 				}
 			]
 		}
